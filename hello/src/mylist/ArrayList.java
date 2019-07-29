@@ -29,8 +29,11 @@ public class ArrayList {
         arr.setIndex(3, 30);
         arr.insertIndex(4, 40);
         arr.print();
-        arr.dropIndex(4);
+        System.out.println(arr.size);
+        int drop = arr.dropIndex(4);
+        System.out.println(drop);
         arr.printAll();
+        System.out.println(arr.size);
     }
 
     public void add(int num) {
@@ -106,10 +109,11 @@ public class ArrayList {
         }
     }
 
-    public int dropIndex(int index) {
+    public int dropIndex (int index) {
         if (index >= 0 && index<= size) {
             int result = array[index];
             System.arraycopy(array, index, array,index-1, size-index);
+            size--;
             return result;
         } else {
             throw new IndexOutOfBoundsException(size);
