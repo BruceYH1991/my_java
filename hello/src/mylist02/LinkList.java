@@ -5,7 +5,7 @@ public class LinkList {
     public int length = 0;
 
 
-    public void print() {
+    public void print () {
         Node head_ = head;
         System.out.print("[");
         if (length > 0) {
@@ -14,6 +14,6 @@ public class LinkList {
                 head_ = head_.getNext();
             }
         }
-        System.out.println(""+head_.getElem()+"]");
+        System.out.println("" + head_.getElem() + "]");
     }
 }

@@ -8,7 +8,7 @@ public class Node {
         elem = num;
     }
 
-    public void setNext(Node node) {
+    public void setNext (Node node) {
         next = node;
     }
 

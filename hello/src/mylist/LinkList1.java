@@ -21,7 +21,7 @@ public class LinkList1 {
         l1.add(3, new Node(10));
 
         l1.print();
-        System.out.println("length: "+l1.length);
+        System.out.println("length: " + l1.length);
         int d3 = l1.drop(3);
         int d1 = l1.dropHead();
         int d2 = l1.dropLast();
@@ -29,7 +29,7 @@ public class LinkList1 {
         System.out.println(d1);
         System.out.println(d2);
         System.out.println(d3);
-        System.out.println("length: "+l1.length);
+        System.out.println("length: " + l1.length);
     }
 
     public LinkList1 () {
@@ -41,7 +41,7 @@ public class LinkList1 {
         head = node;
     }
 
-    public void print() {
+    public void print () {
         Node head_ = head;
         System.out.print("[");
         if (length > 0) {
@@ -50,7 +50,7 @@ public class LinkList1 {
                 head_ = head_.getNext();
             }
         }
-        System.out.println(""+head_.getElem()+"]");
+        System.out.println("" + head_.getElem() + "]");
     }
 
     public int getLength () {
@@ -83,8 +83,8 @@ public class LinkList1 {
         return result;
     }
 
-    public void addLast(Node node) {
-        if (length>0) {
+    public void addLast (Node node) {
+        if (length > 0) {
             Node index = head;
             while (null != index.getNext()) {
                 index = index.getNext();
@@ -96,11 +96,11 @@ public class LinkList1 {
         length++;
     }
 
-    public int dropLast() {
-        int result=0;
+    public int dropLast () {
+        int result = 0;
         if (length > 0) {
             Node index = head;
-            for (int i=1; i<length-1; i++) {
+            for (int i = 1; i < length - 1; i++) {
                 index = index.getNext();
             }
             result = index.getNext().getElem();
@@ -112,12 +112,12 @@ public class LinkList1 {
         return result;
     }
 
-    public void add(int index, Node node) {
+    public void add (int index, Node node) {
         if (length > 0) {
-            if (length>=index) {
-                if (index==0) {
+            if (length >= index) {
+                if (index == 0) {
                     addHead(node);
-                } else if (index>0) {
+                } else if (index > 0) {
                     Node head_ = head;
                     for (int i = 0; i < index - 1; i++) {
                         head_ = head_.getNext();
@@ -137,13 +137,13 @@ public class LinkList1 {
         }
     }
 
-    public int drop(int index) {
+    public int drop (int index) {
         int result = 0;
         if (length > 0) {
-            if (length>=index) {
-                if (index==0) {
+            if (length >= index) {
+                if (index == 0) {
                     dropHead();
-                } else if (index>0) {
+                } else if (index > 0) {
                     Node head_ = head;
                     for (int i = 0; i < index - 1; i++) {
                         head_ = head_.getNext();
@@ -174,7 +174,7 @@ class Node {
         elem = num;
     }
 
-    public void setNext(Node node) {
+    public void setNext (Node node) {
         next = node;
     }
 

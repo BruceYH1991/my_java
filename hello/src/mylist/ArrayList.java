@@ -7,18 +7,18 @@ public class ArrayList {
     private int[] array;
     private static int MAX = 10;
 
-    public ArrayList() {
+    public ArrayList () {
         array = new int[MAX];
     }
 
-    public ArrayList(int max) {
+    public ArrayList (int max) {
         MAX = max;
         array = new int[max];
     }
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
         ArrayList arr = new ArrayList(20);
-        for (int i=0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             arr.add(i);
         }
         arr.add(1);
@@ -36,7 +36,7 @@ public class ArrayList {
         System.out.println(arr.size);
     }
 
-    public void add(int num) {
+    public void add (int num) {
         if (size < MAX) {
             array[size] = num;
             size++;
@@ -50,46 +50,46 @@ public class ArrayList {
         }
     }
 
-    public void print() {
+    public void print () {
         System.out.print("[");
-        for (int i=0; i<size;i++) {
+        for (int i = 0; i < size; i++) {
             System.out.print(array[i]);
             System.out.print(", ");
         }
         System.out.println("]");
     }
 
-    public void printAll() {
+    public void printAll () {
         System.out.println(Arrays.toString(array));
     }
 
-    public int getMAX() {
+    public int getMAX () {
         return MAX;
     }
 
-    public int getIndex(int index) {
+    public int getIndex (int index) {
 
-        if (index >= 0 && index<= size) {
+        if (index >= 0 && index <= size) {
             return array[index];
         } else {
             throw new IndexOutOfBoundsException(size);
         }
     }
 
-    public void setIndex(int index, int num) {
-        if (index >= 0 && index<= size) {
-           array[index] = num;
+    public void setIndex (int index, int num) {
+        if (index >= 0 && index <= size) {
+            array[index] = num;
         } else {
             throw new IndexOutOfBoundsException(size);
         }
     }
 
-    public void insertIndex(int index, int num) {
-        if (index >= 0 && index<= size) {
+    public void insertIndex (int index, int num) {
+        if (index >= 0 && index <= size) {
 
-            if (size<MAX){
+            if (size < MAX) {
                 size++;
-            } else{
+            } else {
                 MAX = MAX + (MAX >> 1);
                 int[] array_new;
                 array_new = Arrays.copyOf(array, MAX);
@@ -102,7 +102,7 @@ public class ArrayList {
 //            newArray[index] = num;
 //            System.arraycopy(array, index, newArray, index+1, size-index);
 //            array = newArray;
-            System.arraycopy(array, index, array, index+1, size-index);
+            System.arraycopy(array, index, array, index + 1, size - index);
             array[index] = num;
         } else {
             throw new IndexOutOfBoundsException(size);
@@ -110,9 +110,9 @@ public class ArrayList {
     }
 
     public int dropIndex (int index) {
-        if (index >= 0 && index<= size) {
+        if (index >= 0 && index <= size) {
             int result = array[index];
-            System.arraycopy(array, index, array,index-1, size-index);
+            System.arraycopy(array, index, array, index - 1, size - index);
             size--;
             return result;
         } else {

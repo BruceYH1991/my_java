@@ -14,27 +14,29 @@ public class Test {
 }
 
 
-class Father{
+class Father {
     public int a = 1;
     int b = 2;
     private int c = 3;
     String str;
 
-    public Father(String str) {
+    public Father (String str) {
         this.str = str;
     }
 
-    public void seta(int a) {
+    public void seta (int a) {
         this.a = a;
     }
-    public void setb(int b) {
+
+    public void setb (int b) {
         this.b = b;
     }
-    public void setc(int c) {
+
+    public void setc (int c) {
         this.c = c;
     }
 
-    public void print() {
+    public void print () {
         System.out.println("=============================");
         System.out.println(str);
         System.out.println(a);
@@ -45,8 +47,8 @@ class Father{
 }
 
 class C1 extends Father {
-    C1(String str) {
-       super(str);
+    C1 (String str) {
+        super(str);
     }
 }
 
